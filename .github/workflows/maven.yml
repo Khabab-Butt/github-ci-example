@@ -32,7 +32,7 @@ jobs:
         # This will generate Test report even if few test cases failed:
       - name: Generate JUnit Report
         run: >
-          mvn -f com.examples.myproject/pom.xml
+          mvn -f com.example.CIExample1/pom.xml
           surefire-report:report-only site:site -DgenerateReports=false
         if: ${{ always() }}
       - name: Archive JUnit Report
