@@ -44,8 +44,10 @@ jobs:
       - name: Run Jacoco Code Coverage
         run: >
           mvn -f com.example.CIExample1/pom.xml
-          clean verify -Pjacoco
+          clean verify -Pjacoco -DrepoToken=$COVERALLS_REPO_TOKEN coveralls:report
           surefire-report:report-only site:site -DgenerateReports=false
+        env:
+          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
       - name: Archive Jacoco Report
         uses: actions/upload-artifact@v3
         if: ${{ always() }}
