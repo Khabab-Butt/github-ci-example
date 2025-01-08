@@ -45,4 +45,11 @@ jobs:
         run: >
           mvn -f com.example.CIExample1/pom.xml
           clean verify -Pjacoco
+          surefire-report:report-only site:site -DgenerateReports=false
+      - name: Archive Jacoco Report
+        uses: actions/upload-artifact@v3
+        if: ${{ always() }}
+        with:
+          name: surefire-report-jdk-${{ matrix.java }}
+          path: '**/target/site'
         
