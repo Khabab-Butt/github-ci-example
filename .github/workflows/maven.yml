@@ -43,6 +43,6 @@ jobs:
           path: '**/target/site'
       - name: Run Jacoco Code Coverage
         run: >
-          mvn -f com.examples.myproject/pom.xml
+          mvn -f com.example.CIExample1/pom.xml
           clean verify -Pjacoco
         
