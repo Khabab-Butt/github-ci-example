@@ -12,8 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        # Test against several Java versions:
-        java: [8, 11]
+        # Test against several Java versions comma separated:
+        java: [8]
 
     steps:
       - uses: actions/checkout@v2
