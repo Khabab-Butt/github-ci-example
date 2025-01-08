@@ -41,6 +41,7 @@ jobs:
         with:
           name: surefire-report-jdk-${{ matrix.java }}
           path: '**/target/site'
+      - name: Run Jacoco Code Coverage
         run: >
           mvn -f com.examples.myproject/pom.xml
           clean verify -Pjacoco
