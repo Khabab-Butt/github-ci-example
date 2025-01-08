@@ -2,7 +2,7 @@ name: Java CI with Maven on Windows
 
 on:
   push:
-  	branches:
+    branches:
       - master
       - task*
   pull_request:
