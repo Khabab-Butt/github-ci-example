@@ -41,3 +41,7 @@ jobs:
         with:
           name: surefire-report-jdk-${{ matrix.java }}
           path: '**/target/site'
+        run: >
+          mvn -f com.examples.myproject/pom.xml
+          clean verify -Pjacoco
+        
